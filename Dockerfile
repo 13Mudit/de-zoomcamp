@@ -1,6 +1,7 @@
 FROM python:3.11
 
-RUN pip install pandas sqlalchemy psycopg2
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 WORKDIR /app
 COPY pipeline.py pipeline.py
